@@ -11,6 +11,8 @@ export default {
     },
     
     computed: {
+
+        // filtro las facturas
         searchInvoice() {
             return this.invoices.filter((item) => {
                 return item.number.toString().includes(this.search) ||
@@ -25,7 +27,8 @@ export default {
     },
 
     methods: {
-
+        
+        // listo todas las facturas
         async  listInvoices(){
             let config = {
                 headers: {                  
@@ -43,10 +46,10 @@ export default {
                 }
             }
         },
-
+        
+        //ordeno la lista acendente y descendentemente
         orderBy(){
             if(this.option == 1){
-                //this.invoices.sort() 
                 this.invoices.sort(function (a, b) {
                     if (a.number > b.number) {
                         return 1;
@@ -54,12 +57,10 @@ export default {
                     if (a.number < b.number) {
                         return -1;
                     }
-                    // a must be equal to b
                     return 0;
                 });
             }
-            if(this.option == 2){
-                //this.invoices.reverse() 
+            if(this.option == 2){  
                 this.invoices.reverse(function (a, b) {
                     if (a.number > b.number) {
                         return 1;
@@ -67,21 +68,10 @@ export default {
                     if (a.number < b.number) {
                         return -1;
                     }
-                    // a must be equal to b
                     return 0;
                 });
             }
 
-            /*invoices.sort(function (a, b) {
-                if (a.number > b.number) {
-                  return 1;
-                }
-                if (a.number < b.number) {
-                  return -1;
-                }
-                // a must be equal to b
-                return 0;
-              });*/
         }
 
            

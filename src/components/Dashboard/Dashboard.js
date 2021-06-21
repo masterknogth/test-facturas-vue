@@ -30,12 +30,13 @@ export default {
         
         addProducts(){
             this.addedProduct = []
-            
+
+            //recorro los productos que estan en la lista 
             for (let i = 0; i < this.products.length; i++) {  
                 
-               let val = document.getElementById('item'+this.products[i].id).value; 
-              /* console.log(this.products[i].id)
-               console.log("valor de : "+this.products[i].id+"--"+val)*/               
+                let val = document.getElementById('item'+this.products[i].id).value; 
+                // si el valor insertado en el input correspondiente en la lista es mayor a 0
+                // agrego el producto seleccionado al carrito        
                 if(val > 0){
                     let objAdded = {
                         description:this.products[i].description,                
@@ -43,6 +44,7 @@ export default {
                         value:this.products[i].price,
                         total_value: (val * this.products[i].price).toFixed(2)
                     }
+                    //se encarga de mostrar los productos que estan el el carrito
                     this.addedProduct.push(objAdded)             
                }   
             }
@@ -57,7 +59,8 @@ export default {
             
             
         },
-
+         
+        // elimino un producto del carrito
         removeProduct(index){  
             this.addedProduct.splice(index,1) 
             this.totalToPay()
@@ -67,6 +70,7 @@ export default {
             }
         },
 
+        // muestro el total a pagar + iva 
         totalToPay(){
             let total = 0
             for (let i = 0; i < this.addedProduct.length; i++) {
@@ -77,7 +81,8 @@ export default {
             this.totalAndIva = (parseFloat(this.total) + parseFloat(this.iva) ).toFixed(2)
              
         },
-
+        
+        // listo los productos
         async  listProducts(){
             let config = {
                 headers: {                  
@@ -95,7 +100,9 @@ export default {
                 }
             }
         },
-
+        
+        
+        //genero factura
         async  generateInvoice(){
             this.inputErrors = []
             this.disableButton = true 
@@ -109,11 +116,14 @@ export default {
             }
             formData.append('buyer_name', this.name)
             formData.append('buyer_nit', this.nit)
+            //obtengo los productos agregados al carrito y los envio en formato json
+            // al backend para que se guarden en la tabla product_invoices
             formData.append('items',JSON.stringify(this.addedProduct) )
             
            
             try{
-                const res = await axios.post('/auth/generate-invoice',formData,config)              
+                const res = await axios.post('/auth/generate-invoice',formData,config)
+                //una vez da respuesta positiva vacio el carrito y los inputs              
                 console.log(res.data)
                 this.disableButton = false 
                 this.loader = false

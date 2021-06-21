@@ -7,7 +7,6 @@ export default {
             email:"",
             nit:"",
             password:"",
-            passwordConfirmation:"",
           
             
             alertSuccess:false, // mostrara el alerta de exito al regitrar

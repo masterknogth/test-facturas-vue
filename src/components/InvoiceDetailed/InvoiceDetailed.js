@@ -20,7 +20,7 @@ export default {
             noArticle:false,// mantiene oculto por defecto el contenedor que mostrara el mensaje de articulo no encontrado
             noArticleMessage:"",//muestra el mensaje de articulo no encontrado
 
-
+            // son los v-model
             number:0,
             sellerName:'',
             sellerNit:'',
@@ -28,14 +28,17 @@ export default {
             buyerNit:0,
             date:'',
             hour:'',  
+
             inputErrors:[], // guarda en arreglo los errores de validacion y los inprimen en su respectivo input      
-            alertSuccess:false,
+            
+            alertSuccess:false,//oculto por defecto el contendor del alerta de exito al registrarte y lo muestro cuando da respuesta positiva
             alertSuccessMessage:"",
 
         };
     },
 
     computed: {
+        //filtro los productos
         searchProduct() {
             return this.products.filter((item) => {
                 return item.description.toLowerCase().includes(this.search.toLowerCase()) ||
@@ -131,6 +134,7 @@ export default {
             }catch(error){
                 if (error.response) {
                     this.alertSuccess = false;
+                    //lleno un arreglo con los errores en los inputs y asi los muestro en el html
                     this.inputErrors.push(
                         error.response.data.error.number,
                         error.response.data.error.seller_name,
@@ -139,7 +143,6 @@ export default {
                         error.response.data.error.buyer_nit,
                         error.response.data.error.date,
                         error.response.data.error.hour,
-
                     )
                     console.log(error.response.data);  
                 }
