@@ -1,0 +1,175 @@
+
+
+.table-x-y-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.table-x-y-scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.table-x-y-scroll::-webkit-scrollbar:vertical {
+   width: 10px;
+}
+
+.table-x-y-scroll::-webkit-scrollbar-thumb {
+    background-color:  #00BCD4;
+    border-radius: 20px;
+    border: 2px solid #00BCD4;
+    
+}
+
+
+
+
+.table-invoices-x-y-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.table-invoices-x-y-scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+.table-invoices-x-y-scroll::-webkit-scrollbar:vertical {
+   width: 10px;
+}
+
+.table-invoices-x-y-scroll::-webkit-scrollbar-thumb {
+    background-color:  #00BCD4;
+    border-radius: 20px;
+    border: 2px solid #00BCD4;
+    
+}
+
+
+
+
+.table-total-container::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+
+.table-total-container::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.table-total-container::-webkit-scrollbar-thumb {
+    background-color:  #00BCD4;
+    border-radius: 20px;
+    border: 2px solid #00BCD4;
+    
+}
+
+
+.table-x-y-scroll{
+    
+    height: 250px;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    border: solid 1px #607D8B;
+    border-radius: 5px;
+}
+
+.table-invoices-x-y-scroll{
+    
+    height: 700px;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    border: solid 1px #607D8B;
+    border-radius: 5px;
+}
+
+.table-table{
+    width: 1000px;
+}
+
+.table-thead-tr-font{
+    color: #607D8B;
+    
+}
+
+.table-thead-tr-font th{
+    padding: 15px;
+   
+    
+}
+
+
+
+.table-tbody-tr-font{
+    color: #607D8B;
+}
+
+.table-tbody-tr-font td{
+    padding: 15px; 
+   
+}
+
+.table-tbody-tr-font:hover{
+    background: #EEEEEE;
+    cursor: pointer;
+}
+
+.table-tbody-td-input{
+    border: solid 1px #607D8B;
+    border-radius: 5px;
+    color:#607D8B;
+    text-align: center;
+}
+
+.table-tbody-td-input:focus{
+    outline: none;
+}
+
+.table-icon-delete{
+    color: #E53935 !important;
+}
+
+.table-button{
+    background:#00BCD4;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    color:#FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-button:hover{
+    background:#00ACC1;
+}
+.table-button:focus{
+    outline: none;
+}
+
+.table-total-container{
+    
+    border: solid 1px #607D8B;
+    border-radius: 5px;
+    
+    overflow-x:scroll;
+}
+
+.table-total{
+    width: 500px;
+}
+
+.table-error-inputs{
+    text-align:center;
+    padding: 0;
+    margin: 0;
+    color: #E53935;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-href{
+    text-decoration: none;
+}
+
+.table-invoice-generate-message{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+

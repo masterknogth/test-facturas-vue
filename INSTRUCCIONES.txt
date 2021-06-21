@@ -1,0 +1,4 @@
+2- ejecutar el comando: npm install para instalar las dependencias necesarias
+
+3- deje un archivo TXT llamado EJEMPLOENV.txt con el contenido que debe haber en el archivo .env 
+   para las variables de entorno

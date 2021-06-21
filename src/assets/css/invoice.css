@@ -1,0 +1,16 @@
+
+
+
+.invoice-title{
+    background: #00BCD4;
+    color:#FFFFFF;
+}
+.invoice-text{
+    text-align: center;
+    color: #607D8B;
+}
+
+.invoice-div-line{
+    height: 10px;  
+    border-top: solid 2px #00BCD4;
+}
